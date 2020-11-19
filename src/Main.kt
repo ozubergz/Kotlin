@@ -1,34 +1,11 @@
-//val name: String = "James"
-val name = "James"
+//fun sayHello(itemToGreet:String) {
+//    println("Hello $itemToGreet")
+//}
 
-//var greeting: String = "Hello"
-//the ? allows to assign the var as null
-var greeting: String? = null
+//single line expression
+fun sayHello(greeting:String, itemToGreet:String) = println("$greeting $itemToGreet")
 
 fun main() {
-
-////////////////// if statement /////////////////////////////
-
-//    if(greeting != null) {
-//        println(greeting)
-//    } else {
-//        println("Hi")
-//    }
-
-//    var greetingToPrint = if(greeting != null) greeting else "Hi"
-
-///////////////// switch statement ////////////////////////
-
-//    when(greeting) {
-//        null -> println("Hi")
-//        else -> println(greeting) //default
-//    }
-
-//    var greetingToPrint = when (greeting) {
-//        null -> "Hi"
-//        else -> greeting
-//    }
-
-    println(name)
-
+    sayHello("Hey", "Kotlin")
+    sayHello("Hello", "World")
 }
