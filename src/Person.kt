@@ -1,16 +1,17 @@
+// youc can give a class non-visibility by typing private before class
 class Person(val firstName: String = "Peter", val lastName: String = "Parker") {
 
-    //you can give property  non-visibility by typing private or protected before var
+    //you can give property non-visibility by typing private or protected before var
     var nickName: String? = null
         // setter
         set(value) {
             field = value
-            println("set nickname is $value")
+//            println("set nickname is $value")
         }
 
         // getter
         get() {
-            println("get nickname, $field")
+//            println("get nickname, $field")
             return field
         }
 
