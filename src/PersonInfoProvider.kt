@@ -13,14 +13,12 @@ interface SessionInfoProvider {
 }
 
 //abstract key word won't allow you to create an instance class
-class BasicInfoProvider : PersonInfoProvider, SessionInfoProvider {
+//open key allows to extend class
+open class BasicInfoProvider : PersonInfoProvider, SessionInfoProvider {
+
+    protected open val sessionIdPrefix = "Session"
 
     // override key word
-//    override fun printInfo(person: Person) {
-//        println("basicInfoProvider")
-//        person.printInfo()
-//    }
-
     override val providerInfo: String
         get() = "BasicInfoProvider"
 
@@ -30,15 +28,17 @@ class BasicInfoProvider : PersonInfoProvider, SessionInfoProvider {
     }
 
     override fun getSessionId(): String {
-        return "Session Id"
+        return sessionIdPrefix
     }
 }
 
 fun main() {
-    val provider = BasicInfoProvider()
+    val provider = FancyInfoProvider()
+    
     provider.printInfo(Person())
     provider.getSessionId()
-    checkTypes(provider)
+
+//    checkTypes(provider)
 }
 
 fun checkTypes(infoProvider: PersonInfoProvider) {
