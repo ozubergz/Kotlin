@@ -33,8 +33,17 @@ open class BasicInfoProvider : PersonInfoProvider, SessionInfoProvider {
 }
 
 fun main() {
-    val provider = FancyInfoProvider()
-    
+
+    //an object expression allows you to create anonymous inner class
+    val provider = object : PersonInfoProvider {
+
+        override val providerInfo: String
+            get() = "New Info Provider"
+
+        fun getSessionId() = "id"
+
+    }
+
     provider.printInfo(Person())
     provider.getSessionId()
 
