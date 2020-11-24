@@ -1,23 +1,15 @@
-interface IdProvider {
-    fun getId(): String
+//object declaration
+object EntityFactory {
+    fun create() = Entity("id", "name")
 }
 
-class Entity private constructor(val id: String) {
-    // you can name your companion obj, example: Factory
-    companion object Factory : IdProvider {
-
-        const val id = "id"
-
-        override fun getId(): String {
-            return "123"
-        }
-
-        fun create() = Entity(getId())
+class Entity(val id: String, val name: String) {
+    override fun toString(): String {
+        return "id: $id, name: $name"
     }
 }
 
 fun main() {
-//    val entity = Entity.Companion.create()
-    val entity = Entity.Factory.create()
-    Entity.id
+    val entity = EntityFactory.create()
+    println(entity)
 }
